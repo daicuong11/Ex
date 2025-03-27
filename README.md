@@ -391,7 +391,7 @@ GO
   ```
 
   - Kết quả
-    ![Kết quả API trên Swagger](./imgs/ex2_result_1.png)
+  ![Kết quả API trên Swagger](./imgs/ex2_result_1.png)
 
   ***
 
@@ -411,7 +411,7 @@ GO
   ```
 
   - Kết quả
-    ![Kết quả API trên Swagger](./imgs/ex2_result_2.png)
+  ![Kết quả API trên Swagger](./imgs/ex2_result_2.png)
 
   ***
 
@@ -431,7 +431,7 @@ GO
   ```
 
   - Kết quả
-    ![Kết quả API trên Swagger](./imgs/ex2_result_3.png)
+  ![Kết quả API trên Swagger](./imgs/ex2_result_3.png)
 
   ***
 
@@ -451,7 +451,7 @@ GO
   ```
 
   - Kết quả
-    ![Kết quả API trên Swagger](./imgs/ex2_result_4.png)
+  ![Kết quả API trên Swagger](./imgs/ex2_result_4.png)
 
   ***
 
@@ -471,7 +471,7 @@ GO
   ```
 
   - Kết quả
-    ![Kết quả API trên Swagger](./imgs/ex2_result_5.png)
+  ![Kết quả API trên Swagger](./imgs/ex2_result_5.png)
 
   ***
 
@@ -491,7 +491,7 @@ GO
   ```
 
   - Kết quả
-    ![Kết quả API trên Swagger](./imgs/ex2_result_6.png)
+  ![Kết quả API trên Swagger](./imgs/ex2_result_6.png)
 
   ***
 
@@ -508,7 +508,7 @@ GO
     @ShipmentStatus = 'Delivered'
   ```
   - Kết quả
-    ![Kết quả API trên Swagger](./imgs/ex2_result_7.png)
+  ![Kết quả API trên Swagger](./imgs/ex2_result_7.png)
 
 ---
 
