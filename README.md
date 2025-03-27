@@ -13,7 +13,6 @@
 - Sử dụng Swagger để kiểm thử API
 
 ### Books
-
 ![Kết quả API trên Swagger](./imgs/book_enpoints.png)
 
 ### Authors
