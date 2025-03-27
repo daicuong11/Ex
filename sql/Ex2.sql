@@ -127,6 +127,15 @@ VALUES
 (3, '2024-03-12', 'In Transit'),
 (4, '2024-03-18', 'Delivered')
 
+EXEC GetComplexOrderReport 
+    @StartDate = '2024-03-01', 
+    @EndDate = '2024-03-31', 
+    @CustomerID = NULL, 
+    @MinAmount = NULL, 
+    @MaxAmount = NULL, 
+    @OrderStatus = NULL, 
+    @ShipmentStatus = NULL
+
 -- Kiểm thử Stored Procedure
 --Mong đợi: Hiển thị tất cả đơn hàng từ ngày 01/03 đến 31/03.
 EXEC GetComplexOrderReport 

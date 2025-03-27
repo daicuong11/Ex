@@ -50,9 +50,20 @@ namespace Ex1.Repositories
             var author = await _context.Authors.FindAsync(authorId);
             if (author == null) return false;
 
-            _context.Authors.Remove(author);
+            var books = await _context.Books.Where(b => b.AuthorId == authorId).ToListAsync();
+
+            foreach (var book in books)
+            {
+                book.AuthorId = null;
+            }
+
             await _context.SaveChangesAsync();
+
+            _context.Authors.Remove(author);
+            await _context.SaveChangesAsync(); 
+
             return true;
         }
+
     }
 }

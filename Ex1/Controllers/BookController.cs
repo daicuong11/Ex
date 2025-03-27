@@ -5,6 +5,7 @@ using Ex1.Interfaces;
 using Ex1.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ex1.Controllers
 {
@@ -13,10 +14,12 @@ namespace Ex1.Controllers
     public class BookController : ControllerBase
     {
         private readonly IBookRepository bookRepository;
+        private readonly IAuthorRepository authorRepository;
 
-        public BookController(IBookRepository bookRepository)
+        public BookController(IBookRepository bookRepository, IAuthorRepository authorRepository)
         {
             this.bookRepository = bookRepository;
+            this.authorRepository = authorRepository;
         }
 
         [HttpGet("fetch")]
@@ -60,12 +63,27 @@ namespace Ex1.Controllers
         [ServiceFilter(typeof(InputValidationFilter))]
         public async Task<ActionResult> CreateBook([FromBody] CreateBookRequest bookReq)
         {
+
+            if (bookReq.AuthorId.HasValue)
+            {
+                var authorExists = await authorRepository.GetAuthorByIdAsync(bookReq.AuthorId.Value);
+                if (authorExists == null)
+                {
+                    return BadRequest(new BaseResponse
+                    {
+                        IsSuccess = false,
+                        StatusCode = System.Net.HttpStatusCode.BadRequest,
+                        Message = $"AuthorId {bookReq.AuthorId} không tồn tại."
+                    });
+                }
+            }
+
             var newBook = new Book
             {
                 Title = bookReq.Title,
                 Price = bookReq.Price,
                 PublishedDate = bookReq.PublishedDate,
-                AuthorId = bookReq.AuthorId,
+                AuthorId = bookReq.AuthorId, 
             };
 
             var bookId = await bookRepository.InsertBookAsync(newBook);

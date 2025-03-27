@@ -25,6 +25,12 @@ namespace Ex1.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Author)
+                .WithMany(a => a.Books)
+                .HasForeignKey(b => b.AuthorId)
+                .OnDelete(DeleteBehavior.SetNull);
+
             modelBuilder.Entity<BookWithTotalCountDTO>().HasNoKey().ToView(null);
             modelBuilder.Entity<BookDTO>().HasNoKey().ToView(null);
 

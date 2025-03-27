@@ -73,7 +73,7 @@ namespace Ex1.Controllers
             {
                 IsSuccess = true,
                 StatusCode = System.Net.HttpStatusCode.Created,
-                Message = "Book created successfully"
+                Message = "Author created successfully"
             });
         }
 
