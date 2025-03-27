@@ -3,7 +3,7 @@
 ## Ex1
 ## Mã nguồn
 - Thư mục project ASP.NET Core Web API: `Ex1`
-- 
+
 ## Công nghệ sử dụng
 
 - **.NET Core 6** - Framework chính, cung cấp hiệu suất cao và khả năng mở rộng tốt.
